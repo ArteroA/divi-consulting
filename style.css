@@ -197,8 +197,28 @@ section {
     transition: box-shadow 0.3s ease;
 }
 
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--offwhite);
+    transition: all 0.3s ease;
+}
+
 #navbar.scrolled {
-    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    /*  box-shadow: 0 2px 20px rgba(0,0,0,0.3);  */
+    box-shadow: 0 2px 20px rgba(139, 58, 42, 0.4);
 }
 
 .nav-container {
@@ -215,6 +235,20 @@ section {
     font-size: 1.4rem;
     color: var(--offwhite);
     letter-spacing: 0.02em;
+}
+
+.nav-logo a {
+    color: var(--offwhite);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.nav-logo a:hover {
+    color: var(--gold);
+    text-decoration: none;
 }
 
 .nav-links {
@@ -270,20 +304,32 @@ section {
    HERO
 ================================ */
 #hero {
+    position: relative;
     background-color: var(--dark);
-    background-image: url("assets/images/brick-texture.png");
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 10% 80px;
+    padding: 0 10%;
     border-bottom: 4px solid var(--brick);
 }
 
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/images/dark_brick_wall.webp");
+    background-size: 760px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.30;
+    z-index: 0;
+}
+
 .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 750px;
+    margin-top: 60px;
 }
 
 #hero h1 {
@@ -296,6 +342,54 @@ section {
     font-size: 1.1rem;
     max-width: 550px;
     margin-bottom: 2rem;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4rem;
+}
+
+.hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    border-left: 2px solid var(--brick);
+    padding-left: 3rem;
+    margin-top: 60px;
+}
+.stat {
+    transition: transform 0.3s ease;
+    cursor: default;
+    position: relative;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--gold);
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #B0A898;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.3rem;
+}
+
+.stat:hover {
+    transform: translateY(-4px);
+}
+
+.stat:hover .stat-number {
+    color: var(--offwhite);
 }
 
 /* ================================
@@ -499,4 +593,78 @@ form .btn-primary {
 .faq-item.faq-open h3::after {
     content: " −";
     color: var(--gold);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+
+    .hero-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        border-left: none;
+        border-top: 2px solid var(--brick);
+        padding-left: 0;
+        padding-top: 2rem;
+        gap: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-placeholder {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 1rem 0;
+        border-top: 2px solid var(--brick);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 0.8rem 2rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    /* Hamburger open state — X animation */
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
 }

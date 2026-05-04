@@ -27,7 +27,8 @@ const fadeObserver = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.1
+    threshold: 0.05,
+    rootMargin: '0px 0px -50px 0px'
 });
 
 fadeElements.forEach(el => {
@@ -35,6 +36,51 @@ fadeElements.forEach(el => {
     fadeObserver.observe(el);
 });
 
+window.addEventListener('load', () => {
+    fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            el.classList.add('visible');
+            fadeObserver.unobserve(el);
+        }
+    });
+});
+
+// ================================
+// COUNT UP ANIMATION
+// ================================
+const countUpElements = document.querySelectorAll('.stat-number');
+
+const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = entry.target;
+            const text = target.textContent;
+            const number = parseInt(text);
+            
+            if (isNaN(number)) return;
+            
+            const suffix = text.replace(/[0-9]/g, '');
+            let start = 0;
+            const duration = 2000;
+            const increment = number / (duration / 16);
+
+            const counter = setInterval(() => {
+                start += increment;
+                if (start >= number) {
+                    target.textContent = number + suffix;
+                    clearInterval(counter);
+                } else {
+                    target.textContent = Math.floor(start) + suffix;
+                }
+            }, 16);
+
+            countObserver.unobserve(target);
+        }
+    });
+}, { threshold: 0.5 });
+
+countUpElements.forEach(el => countObserver.observe(el));
 
 // ================================
 // FAQ ACCORDION
@@ -86,5 +132,24 @@ window.addEventListener('scroll', () => {
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
+    });
+});
+
+
+// ================================
+// HAMBURGER MENU
+// ================================
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+});
+
+mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
     });
 });
