@@ -14,7 +14,11 @@
     <!-- NAV -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="nav-logo"><a href="#hero">Divi Consulting</a></div>
+            <div class="nav-logo">
+                <a href="#hero">
+                    <span>Divi Consulting</span>
+                </a>
+            </div>
             <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -87,7 +91,7 @@
                 <li>Your team is good people, but nobody is truly accountable for results.</li>
                 <li>You've tried consultants before. They handed you a plan and vanished.</li>
             </ul>
-            <p class="pain-cta">If any of this sounds familiar, you're not alone — and there's a clear path forward. Let's talk.</p>
+            <p class="pain-cta">If any of this sounds familiar, you're not alone — and there's a clear path forward. <a href="#contact" class="btn-secondary">Let's talk.</a></p>
         </div>
     </section>
 
@@ -96,22 +100,36 @@
         <div class="container">
             <h2>What we do</h2>
             <p class="section-sub">Every engagement is built around what your business actually needs — whether you're a single location or a Fortune 100 company. Proven procedures. Real results.</p>
-            <div class="cards">
-                <div class="card">
-                    <h3>Financial Performance</h3>
-                    <p>P&L reviews, budget oversight, EBITDA improvement, weekly reporting on operational costs, and cost controls that actually stick.</p>
+            <div class="services-spotlight">
+                <div class="services-nav">
+                    <div class="services-nav-item active" data-service="0">
+                        <span class="services-nav-num">01</span>
+                        <span class="services-nav-title">Financial Performance</span>
+                        <span class="services-nav-arrow">→</span>
+                    </div>
+                    <div class="services-nav-item" data-service="1">
+                        <span class="services-nav-num">02</span>
+                        <span class="services-nav-title">Operations</span>
+                        <span class="services-nav-arrow">→</span>
+                    </div>
+                    <div class="services-nav-item" data-service="2">
+                        <span class="services-nav-num">03</span>
+                        <span class="services-nav-title">Staffing & People</span>
+                        <span class="services-nav-arrow">→</span>
+                    </div>
+                    <div class="services-nav-item" data-service="3">
+                        <span class="services-nav-num">04</span>
+                        <span class="services-nav-title">Vendor & Cost Management</span>
+                        <span class="services-nav-arrow">→</span>
+                    </div>
+                    <div class="services-accent-line"></div>
                 </div>
-                <div class="card">
-                    <h3>Operations</h3>
-                    <p>We get your locations running like the owner never left. Accountability systems and performance standards that hold.</p>
-                </div>
-                <div class="card">
-                    <h3>Staffing & People</h3>
-                    <p>The right people in the right seats. We review your team structure and help build a culture of ownership.</p>
-                </div>
-                <div class="card">
-                    <h3>Vendor & Cost Management</h3>
-                    <p>31 years of relationships means better deals, stronger negotiations, and lower costs for your business.</p>
+                <div class="services-panel">
+                    <div class="services-panel-inner" id="servicesPanel">
+                        <div class="services-panel-visual" id="serviceVisual"></div>
+                        <h3 class="services-panel-title" id="serviceTitle">Financial Performance</h3>
+                        <p class="services-panel-desc" id="serviceDesc">P&L reviews, budget oversight, EBITDA improvement, weekly reporting on operational costs, and cost controls that actually stick. We dig into your numbers so you always know exactly where you stand.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,30 +156,145 @@
         </div>
     </section>
 
-    <!-- CORE VALUES -->
-    <section id="values">
-        <div class="container">
-            <h2>What we stand for</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>Accountability</h3>
-                    <p>We hold your team to a standard. And we hold ourselves to the same one.</p>
+   <!-- CLIENTS CAROUSEL -->
+<section id="clients">
+    <div class="container">
+        <p class="clients-label">Trusted across industries</p>
+    </div>
+    <div class="carousel-track-wrapper">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 4L4 20h16L12 4z" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Apex Capital</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#8B3A2A" stroke-width="1.5"/></svg>
+                <span>Meridian Group</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8B3A2A" stroke-width="1.5"/></svg>
+                <span>Stonewall Partners</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span>Northgate Holdings</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6 18L12 6l6 12" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Summit Equity</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 4v8l4 4" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span>Ironbridge Ventures</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 8h16M4 12h16M4 16h16" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span>Harbor Street Group</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/><rect x="13" y="4" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/><rect x="4" y="13" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/><rect x="13" y="13" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/></svg>
+                <span>Crestview Capital</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <!-- DUPLICATES FOR INFINITE LOOP -->
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 4L4 20h16L12 4z" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Apex Capital</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#8B3A2A" stroke-width="1.5"/></svg>
+                <span>Meridian Group</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#8B3A2A" stroke-width="1.5"/></svg>
+                <span>Stonewall Partners</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span>Northgate Holdings</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6 18L12 6l6 12" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Summit Equity</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 4v8l4 4" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span>Ironbridge Ventures</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 8h16M4 12h16M4 16h16" stroke="#8B3A2A" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span>Harbor Street Group</span>
+            </div>
+            <div class="carousel-divider">·</div>
+            <div class="carousel-item">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/><rect x="13" y="4" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/><rect x="4" y="13" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/><rect x="13" y="13" width="7" height="7" rx="1" stroke="#8B3A2A" stroke-width="1.5"/></svg>
+                <span>Crestview Capital</span>
+            </div>
+            <div class="carousel-divider">·</div>
+        </div>
+    </div>
+</section>
+
+<!-- CORE VALUES -->
+<section id="values">
+    <div class="container">
+        <h2>What we stand for</h2>
+        <div class="values-line-container">
+            <div class="values-spine">
+                <div class="spine-dot" id="dot0"></div>
+                <div class="spine-line" id="line0"></div>
+                <div class="spine-dot" id="dot1"></div>
+                <div class="spine-line" id="line1"></div>
+                <div class="spine-dot" id="dot2"></div>
+                <div class="spine-line" id="line2"></div>
+                <div class="spine-dot" id="dot3"></div>
+            </div>
+            <div class="values-list">
+                <div class="value-row" id="val0">
+                    <div class="value-num">01</div>
+                    <div class="value-body">
+                        <h3 class="value-title">Accountability</h3>
+                        <p class="value-desc">We hold your team to a standard. And we hold ourselves to the same one.</p>
+                    </div>
                 </div>
-                <div class="value-item">
-                    <h3>Transparency</h3>
-                    <p>No surprises. No hidden agendas. You'll always know exactly where things stand.</p>
+                <div class="value-row" id="val1">
+                    <div class="value-num">02</div>
+                    <div class="value-body">
+                        <h3 class="value-title">Transparency</h3>
+                        <p class="value-desc">No surprises. No hidden agendas. You'll always know exactly where things stand.</p>
+                    </div>
                 </div>
-                <div class="value-item">
-                    <h3>Results over reports</h3>
-                    <p>We measure success by what changes in your business, not the thickness of a binder.</p>
+                <div class="value-row" id="val2">
+                    <div class="value-num">03</div>
+                    <div class="value-body">
+                        <h3 class="value-title">Results over reports</h3>
+                        <p class="value-desc">We measure success by what changes in your business, not the thickness of a binder.</p>
+                    </div>
                 </div>
-                <div class="value-item">
-                    <h3>Respect for people</h3>
-                    <p>Your team built this business with you. We treat them accordingly.</p>
+                <div class="value-row" id="val3">
+                    <div class="value-num">04</div>
+                    <div class="value-body">
+                        <h3 class="value-title">Respect for people</h3>
+                        <p class="value-desc">Your team built this business with you. We treat them accordingly.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- PAUL QUOTE -->
     <section id="quote">
@@ -191,7 +324,7 @@
     <!-- FAQ -->
     <section id="faq">
         <div class="container">
-            <h2>Common questions</h2>
+            <h2>Frequently Asked Questions</h2>
             <div class="faq-list">
                 <div class="faq-item">
                     <h3>How does an engagement typically start?</h3>
@@ -257,18 +390,10 @@
                         <li><a href="#services">Vendor Management</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Our Promise</h4>
-                    <ul>
-                        <li><span>We show up.</span></li>
-                        <li><span>We move fast.</span></li>
-                        <li><span>We get results.</span></li>
-                    </ul>
-                </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2025 Divi Consulting. All rights reserved.</p>
-                <a href="/privacy">Privacy Policy</a>
+                <a href="privacy.html">Privacy Policy</a>
             </div>
         </div>
     </footer>
