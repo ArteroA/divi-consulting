@@ -186,6 +186,28 @@ navItems.forEach(item => {
 });
 
 // ================================
+// HERO FADE IN SEQUENCE
+// ================================
+window.addEventListener('load', () => {
+    const heroH1 = document.querySelector('#hero h1');
+    const heroP = document.querySelector('#hero p');
+    const heroBtn = document.querySelector('#hero .btn-primary');
+    const heroStats = document.querySelector('.hero-stats');
+
+    const elements = [heroH1, heroP, heroBtn, heroStats];
+    const delays = [300, 500, 900, 1200];
+
+    elements.forEach((el, i) => {
+        if (el) {
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, delays[i]);
+        }
+    });
+});
+
+// ================================
 // VALUES MORTAR LINE ANIMATION
 // ================================
 function runValuesAnimation() {
