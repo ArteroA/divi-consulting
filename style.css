@@ -1310,8 +1310,9 @@ footer::before {
     position: relative;
     z-index: 1;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
     padding-top: 1.5rem;
 }
 
@@ -1325,10 +1326,41 @@ footer::before {
 .footer-bottom a {
     color: #444;
     font-size: 0.8rem;
+    align-items: right;
+    display: inline-block; 
 }
 
 .footer-bottom a:hover {
     color: var(--gold);
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    margin-bottom: 1rem;
+}
+
+.site-signature {
+    text-align: center;
+    width: 100%;
+}
+
+.footer-bottom p, 
+.footer-bottom a {
+    color: #444;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--gold);
+}
+
+.site-signature a:hover {
+    transform: scale(1.1) translateY(-2px) 2s ease;
 }
 
 /* ================================
@@ -1626,6 +1658,10 @@ form .btn-primary {
     }
 
     .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom{
         grid-column: 1 / -1;
     }
 }
