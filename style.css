@@ -110,20 +110,128 @@ section {
     max-width: 600px;
 }
 
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+/* ================================
+   WHO WE SERVE
+================================ */
+.serve-featured {
+    background: var(--dark);
+    border-radius: 6px;
+    padding: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: background 0.3s ease;
 }
 
-.card {
+.serve-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--brick);
+}
+
+.serve-featured-tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--brick);
+    margin-bottom: 1rem;
+    display: block;
+    font-family: var(--font-body);
+}
+
+.serve-featured h3 {
+    font-size: 1.4rem;
+    color: var(--offwhite);
+    margin: 0 0 0.8rem;
+    font-weight: 700;
+}
+
+.serve-featured p {
+    font-size: 0.95rem;
+    color: #B0A898;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 600px;
+}
+
+.serve-featured-arrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1.2rem;
+    color: var(--brick);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-8px);
+}
+
+.serve-featured:hover .serve-featured-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.serve-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.serve-card {
     background: white;
+    border: 1px solid #e8e3db;
+    border-radius: 6px;
     padding: 2rem;
-    border-radius: 4px;
-    border-top: 3px solid var(--brick);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: border-color 0.3s ease;
+}
+
+.serve-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--brick);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.serve-card:hover::before {
+    transform: scaleX(1);
+}
+
+.serve-card:hover {
+    border-color: #c8b8a8;
+}
+
+.serve-card h3 {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin: 0 0 0.6rem;
+    font-weight: 700;
+}
+
+.serve-card p {
+    font-size: 0.9rem;
+    color: var(--mortar);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .serve-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ================================
@@ -1116,17 +1224,19 @@ section {
 footer {
     padding: 4rem 0 1.5rem;
     position: relative;
-    background-image: url("assets/images/bwgray.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--dark);
+
 }
 
 footer::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(17, 17, 17, 0.92);
+    background-image: url("assets/images/bwgray.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.10;
     z-index: 0;
 }
 
@@ -1222,7 +1332,7 @@ footer::before {
 }
 
 /* ================================
-   CONTACT FORM
+   CONTACT FORM 
 ================================ */
 form {
     display: flex;
@@ -1232,8 +1342,16 @@ form {
     max-width: 600px;
 }
 
+/* Container for side-by-side inputs */
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Shared styles for all inputs, textareas, and selects */
 form input,
-form textarea {
+form textarea,
+form select {
     width: 100%;
     padding: 1rem 1.2rem;
     background: #2a2a2a;
@@ -1243,10 +1361,22 @@ form textarea {
     font-family: var(--font-body);
     font-size: 1rem;
     transition: border-color 0.2s ease;
+    appearance: none; /* Removes default arrow on selects */
+    -webkit-appearance: none;
+}
+
+/* Specific styling for the dropdown arrow */
+form select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    cursor: pointer;
 }
 
 form input:focus,
-form textarea:focus {
+form textarea:focus,
+form select:focus {
     outline: none;
     border-color: var(--brick);
 }
@@ -1263,6 +1393,15 @@ form textarea {
 
 form .btn-primary {
     align-self: flex-start;
+    cursor: pointer;
+}
+
+/* Mobile Responsiveness for side-by-side fields */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 /* ================================
@@ -1358,7 +1497,7 @@ form .btn-primary {
 
     .privacy-hero {
         background: var(--dark);
-        background-image: url("assets/images/stonehaven.png");
+        background-image: url("assets/images/bwgray.jpg");
         background-size: cover;
         background-position: center;
         position: relative;

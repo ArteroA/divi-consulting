@@ -64,16 +64,18 @@
         <div class="container">
             <h2>Is this you?</h2>
             <p class="section-sub">We work with three kinds of businesses — and we're honest about who we can help most.</p>
-            <div class="cards">
-                <div class="card featured">
-                    <h3>Private Equity Firms</h3>
-                    <p>You've acquired a company with untapped potential. The numbers aren't where they need to be and you need someone on the ground who treats your portfolio like their own.</p>
-                </div>
-                <div class="card">
+            <div class="serve-featured">
+                <span class="serve-featured-tag"></span>
+                <h3>Private Equity Firms</h3>
+                <p>You've acquired a company with untapped potential. The numbers aren't where they need to be and you need someone on the ground who treats your portfolio like their own.</p>
+                <span class="serve-featured-arrow"></span>
+            </div>
+            <div class="serve-grid">
+                <div class="serve-card">
                     <h3>Multi-Location Businesses</h3>
                     <p>The moment you step away, performance drops. You need operations that run the same whether you're there or not.</p>
                 </div>
-                <div class="card">
+                <div class="serve-card">
                     <h3>Single Location Owners</h3>
                     <p>Growth is the goal. But before you scale, let's make sure what you've built is ready for it.</p>
                 </div>
@@ -376,15 +378,45 @@
         <div class="container">
             <h2>Let's find out if we're a fit.</h2>
             <p>Every business is different. Tell us about yours and we'll have an honest conversation about whether we can help — no pressure, no pitch.</p>
-            <form action="https://formspree.io/f/xzdoggzk" method="POST">
+
+<!-- SIMPLE FORM -->            
+<!--             <form action="https://formspree.io/f/xzdoggzk" method="POST">
                 <input type="text" name="name" placeholder="Your name" required>
                 <input type="email" name="email" placeholder="Your email" required>
                 <textarea name="message" placeholder="Tell us about your business" rows="5" required></textarea>
+                <button type="submit" class="btn-primary">Send message →</button>
+            </form> -->
+
+<!-- PROFESSIONAL CONSULTATION FORM -->
+            <form action="https://formspree.io/f/xzdoggzk" method="POST">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Your email" required>
+                </div>
+                
+                <div class="form-row">
+                    <select name="business_type" required>
+                        <option value="" disabled selected>Business Type</option>
+                        <option value="Private Equity">Private Equity</option>
+                        <option value="Multi-Location">Multi-Location Business</option>
+                        <option value="Single-Location">Single Location</option>
+                    </select>
+                    <select name="revenue_bracket">
+                        <option value="" disabled selected>Annual Revenue (Optional)</option>
+                        <option value="<1M">Under $1M</option>
+                        <option value="1M-10M">$1M - $10M</option>
+                        <option value="10M+">$10M+</option>
+                    </select>
+                </div>
+
+                <textarea name="message" placeholder="What is the #1 operational challenge you're facing?" rows="4" required></textarea>
                 <button type="submit" class="btn-primary">Send message →</button>
             </form>
             <p class="contact-direct">Or reach us directly at <a href="mailto:paul@operationsandprofits.com">paul@operationsandprofits.com</a></p>
         </div>
     </section>
+
+
 
     <!-- FOOTER -->
     <footer>
