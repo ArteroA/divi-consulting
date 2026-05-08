@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -87,15 +87,33 @@
     <section id="pain">
         <div class="container">
             <h2>Does this sound familiar?</h2>
+            
             <ul class="pain-list">
-                <li>Your locations perform well when you're there. The moment you leave, things slip.</li>
-                <li>Money is leaking somewhere in the business. You just can't find it.</li>
-                <li>Good people on your team — but nobody is truly accountable for results.</li>
-                <li>You've hired consultants before. They handed you a report and disappeared.</li>
+                <li>
+                    <i data-lucide="map-pin"></i>
+                    <p>Your locations perform well when you're there. The moment you leave, things slip.</p>
+                </li>
+                <li>
+                    <i data-lucide="trending-down"></i>
+                    <p>Money is leaking somewhere in the business. You just can't find it.</p>
+                </li>
+                <li>
+                    <i data-lucide="users"></i>
+                    <p>Good people on your team — but nobody is truly accountable for results.</p>
+                </li>
+                <li>
+                    <i data-lucide="file-warning"></i>
+                    <p>You've hired consultants before. They handed you a report and disappeared.</p>
+                </li>
             </ul>
+
             <p class="pain-cta">If any of this sounds familiar, you're not alone — and there's a clear path forward. Let's talk.</p>
         </div>
     </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
 
     <!-- SERVICES -->
     <section id="services">
@@ -458,7 +476,7 @@
                     <a href="https://www.linkedin.com/in/antoniogartero" class="footer-credit">Built by CanopyGroundStudio</a>
                 </div>
             </div>
-            
+
         </div>
     </footer>
 
